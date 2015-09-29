@@ -11,11 +11,11 @@ package VariablesOperators;
  */
 public class Grade {
     public static void main(String[] args) {
-        double possPoints = 400;
         double currGrade = 87;
-        double nextTestPoints = 50;
+        double nextTestPoints = 80;
         double gradeWanted = 90;
-        double currPoints = currGrade/100*possPoints;
+        double currPoints = 329;
+        double possPoints = currPoints+nextTestPoints;
         double pointsWanted = gradeWanted/100*(possPoints+nextTestPoints);
     }
 }
