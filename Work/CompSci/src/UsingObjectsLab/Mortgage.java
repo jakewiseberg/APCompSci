@@ -10,5 +10,11 @@ package UsingObjectsLab;
  * @author jacob.wiseberg
  */
 public class Mortgage {
+    public static void main(String[] args) {
+        
+    }
     
+    public static double mortgage(double loan, double interest, int years) {
+        return 10;
+    }
 }

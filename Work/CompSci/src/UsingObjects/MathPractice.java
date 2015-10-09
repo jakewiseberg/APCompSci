@@ -29,7 +29,7 @@ public class MathPractice {
     return: random integer between min and max, inclusive
     */
     public static int random(int min, int max) {
-        int x = max-min+1; //x = the amount of numbers to choose from, TODO multiply Math.random() by x
+        int x = max-min+1;
         return (int)(Math.random()*x+min);
     }
 }
