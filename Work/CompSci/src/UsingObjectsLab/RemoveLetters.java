@@ -14,13 +14,13 @@ public class RemoveLetters {
         Scanner reader = new Scanner(System.in);
         System.out.println("Input a word: ");
         String word = reader.next();
-        remove(word);
+        System.out.println(remove(word));
     }
     
-    public static void remove(String word) {
-        int amt = word.length()-1;
+    public static String remove(String word) {
         char first = word.charAt(0);
-        char last = word.charAt(amt);
-        System.out.println(first+last);
+        char last = word.charAt(word.length()-1);
+        String newWord = first+""+ last;
+        return newWord;
     }
 }
