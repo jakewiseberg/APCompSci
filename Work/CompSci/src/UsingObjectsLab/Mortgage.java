@@ -17,13 +17,13 @@ public class Mortgage {
         System.out.print("Input principal loan borrowed: ");
         double P = reader.nextDouble();
         System.out.print("Input annual interest rate: ");
-        int i = reader.nextInt();
-        System.out.print("Input number of years to pay of thr mortgage: ");
-        int n = reader.nextInt();
+        double i = reader.nextDouble()/12;
+        System.out.print("Input number of years to pay off the mortgage: ");
+        int n = reader.nextInt()*12;
         System.out.println("Your monthly payment is $" + mortgage(P,i,n));
     }
     
-    public static double mortgage(double P, int i, int n) {
+    public static double mortgage(double P, double i, int n) {
         return P*((i*Math.pow((1+i), n))/(Math.pow((1+i), n)-1));
     }
 }
