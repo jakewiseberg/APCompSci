@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DefiningClasses;
 
 /**
@@ -17,5 +12,6 @@ public class Barn {
         Horse vladimir = new Horse();
         Horse patty = new Horse(vladimir);
         
+        Student jake = new Student("Jake");
     }
 }
