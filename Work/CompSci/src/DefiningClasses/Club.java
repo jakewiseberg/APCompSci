@@ -7,8 +7,9 @@ package DefiningClasses;
 public class Club {
     public static void main(String[] args) {
         Rapper fett = new Rapper("Fetty Wap", "Charles Hafforford", 5, 29);
-        Rapper drake = new Rapper("Drake", "Aubrey Graham");
-        System.out.println("Expected Name: Fetty Wap\nReturned Name: " + fett.getStageName());
-        
+        System.out.println("Fetty Wap Prison Record: " + fett.getPrisonRecord());
+        System.out.println("Ahhh, " + fett.getStageName() + " commited a crime!!");
+        fett.commitCrime();
+        System.out.println("Fetty Wap Prison Record: " + fett.getPrisonRecord());
     }
 }

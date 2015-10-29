@@ -57,5 +57,8 @@ public class Rapper {
         this.prisonRecord = prisonRecord;
     }
 
-    
+    //Doers
+    public void commitCrime() {
+        prisonRecord++;
+    }
 }
