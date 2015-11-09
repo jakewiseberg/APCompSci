@@ -11,13 +11,13 @@ package DefiningClassesLab;
  */
 public class BugTester {
     public static void main(String[] args) {
-        Bug bugsy = new Bug(10);
+        Bug bugsy = new Bug(0);
         
         System.out.println("\nBugsy's initial position: " + bugsy.getPosition()+ "\n");
         
         bugsy.move();
         System.out.println("Bugsy just moved!!");
-        System.out.println("Expected position: 11");
+        System.out.println("Expected position: 1");
         System.out.println("Returned position: " + bugsy.getPosition() + "\n");
         
         bugsy.turn();
@@ -25,17 +25,17 @@ public class BugTester {
         
         bugsy.move();
         System.out.println("Bugsy just moved again!!!");
-        System.out.println("Expected position: 10");
+        System.out.println("Expected position: 0");
         System.out.println("Current position: " + bugsy.getPosition()+ "\n");
         
         bugsy.move();
         System.out.println("Bugsy just moved again!!!");
-        System.out.println("Expected position: 9");
+        System.out.println("Expected position: -1");
         System.out.println("Current position: " + bugsy.getPosition()+ "\n");
         
         bugsy.move();
         System.out.println("Bugsy just moved again!!!");
-        System.out.println("Expected position: 8");
+        System.out.println("Expected position: -2");
         System.out.println("Current position: " + bugsy.getPosition()+ "\n");
         
         bugsy.turn();
@@ -43,7 +43,7 @@ public class BugTester {
         
         bugsy.move();
         System.out.println("Bugsy just moved again!!!");
-        System.out.println("Expected position: 9");
+        System.out.println("Expected position: -1");
         System.out.println("Current position: " + bugsy.getPosition()+ "\n");
     }
 }

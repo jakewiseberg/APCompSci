@@ -11,20 +11,22 @@ package DefiningClassesLab;
  */
 public class Bug {
     private int position;
+    private int direction;
     
     public Bug(int initialPosition) {
         position = initialPosition;
+        direction = 1;
     }
     
     public int getPosition() {
-        return Math.abs(position);
+        return position;
     }
     
     public void move() {
-        position = position+1;
+        position = position+direction;
     }
     public void turn() {
-        position = -position;
+        direction = -direction;
     }
     
 }
