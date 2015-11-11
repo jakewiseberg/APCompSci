@@ -6,18 +6,15 @@ package Circle;
  */
 public class CoordinatePlane {
     public static void main(String[] args) {
-        Point center = new Point(2, 3.5);
-        Circle a = new Circle(center , 4);
-        Circle b = new Circle(2, 23.5, 4);
-        Circle c = new Circle(center, 6);
-        //System.out.println(a.equals(b));
-        //tranlateUp(a, 20);
-        //System.out.println(a.equals(b));
-        System.out.println("True of false.");
-        System.out.print("Are cirlces a and b overlapping? ");
-        System.out.println(a.overlaps(b));
-        System.out.print("Are cirlces a and c overlapping? ");
-        System.out.println(a.overlaps(c));
+        
+        Circle a = new Circle(new Point(Math.random()*100, Math.random()*100), 5);
+        Circle b = new Circle(new Point(Math.random()*100, Math.random()*100), 5);
+        
+        while (a.overlaps(b)) {
+            System.out.println("OVERLAP");
+            b.getCenter().setX(Math.random()*100);
+            b.getCenter().setY(Math.random()*100);
+        }
     }
     
     //tanslates the given circle upwards x amount

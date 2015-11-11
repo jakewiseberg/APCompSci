@@ -49,12 +49,13 @@ public class Circle {
     }
     //overlaps
     public boolean overlaps(Circle c) {
-        //if distance between centers <= sum of both radii
-        //then the circles are "overlapping"
-        return this.getCenter().distance(c.getCenter()) <= this.radius + c.getRadius();
+        //if distance between centers <= sum of both radii --> then the circles are overlapping
+        return  this.center.distance(c.getCenter()) <=
+                    this.radius + c.getRadius();
     }
     @Override
     public String toString() {
-        return "This is a circle with a center located at (" + center.getX() + ", " + center.getY() + ") and a radius of " + radius + "\nThis circles equation is " + this.getEquation();
+        return "This is a circle with a center located at (" + center.getX() + ", " + center.getY() + ") and a radius of "
+                    + radius + "\nThis circles equation is " + this.getEquation();
     }
 }
