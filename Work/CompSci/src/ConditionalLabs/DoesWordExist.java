@@ -9,15 +9,10 @@ package ConditionalLabs;
 public class DoesWordExist {
     public static void main(String[] args) {
         System.out.println(existing("understand" , "stand"));
+        System.out.println(existing("moon" , "on"));
     }
     
     public static boolean existing(String a, String b) {
-        int beginIndex = a.indexOf(b.charAt(0));
-        int endIndex = beginIndex + b.length();
-        
-        String sub;
-        if (beginIndex<0 ) sub = "";
-        else sub = a.substring(beginIndex, endIndex);
-        return sub.compareTo(b) == 0;
+        return (a.toLowerCase().indexOf(b))>=0;
     }
 }
