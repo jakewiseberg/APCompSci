@@ -10,7 +10,6 @@ package ConditionalLabs;
  * @author jakew
  */
 
-//STATUS: FINISHED
 public class DaysInMonth {
     public static void main(String[] args) {
         System.out.println(daysInMonth(2, 1800));

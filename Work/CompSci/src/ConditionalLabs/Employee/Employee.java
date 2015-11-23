@@ -10,7 +10,6 @@ package ConditionalLabs.Employee;
  * @author jakew
  */
 
-//STATUS: FINISHED
 public class Employee {
     String name;
     double salary;

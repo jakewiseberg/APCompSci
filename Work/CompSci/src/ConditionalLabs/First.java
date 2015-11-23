@@ -10,7 +10,6 @@ package ConditionalLabs;
  * @author jakew
  */
 
-//STATUS: FINISHED       SIDE NOTE: COULD BE MORE EFFICIENT, WILL CHECK BACK LATER
 public class First {
     public static void main(String[] args) {
         System.out.println(first("b","c","a"));
