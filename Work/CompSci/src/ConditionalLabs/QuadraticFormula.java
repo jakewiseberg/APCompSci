@@ -5,7 +5,6 @@ package ConditionalLabs;
  * @author jacob.wiseberg
  */
 
-//STATUS: I THINK FINISHED BUT NEED TO CHECK WITH MR. WASSERMAN
 public class QuadraticFormula {
     
     public static void main(String[] args) {
@@ -24,9 +23,9 @@ public class QuadraticFormula {
         answer2 = second + "";
         
         if ( (Math.pow(b, 2) - (4*a*c)) < 0) {
-            i = (Math.pow(b, 2) - (4*a*c));
-            answer1 = -b + " * " + "sqrt(" + i + ") / " + (2*a);
-            answer2 = b + " * " + "sqrt(" + i + ") / " + (2*a);
+            i = (Math.sqrt(Math.abs(Math.pow(b, 2) - (4*a*c))) / (2*a));
+            answer1 = -b/(2*a) + " + " + i + "i";
+            answer2 = -b/(2*a) + " - " + i + "i";
         }
         
         return "x = {  " + answer1 + "    ,   " + answer2 + "  }";

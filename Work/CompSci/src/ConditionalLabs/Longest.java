@@ -5,7 +5,6 @@ package ConditionalLabs;
  * @author jacob.wiseberg
  */
 
-//STATUS: FINISHED
 public class Longest {
     public static void main(String[] args) {
         System.out.println(longest("test", "tests", "testssssssssssssss"));
