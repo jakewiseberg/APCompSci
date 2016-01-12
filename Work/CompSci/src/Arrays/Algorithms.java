@@ -5,7 +5,6 @@ package Arrays;
  * @author jacob.wiseberg
  */
 public class Algorithms {
-    
     private int[] list;
     public Algorithms(int[] list) {
        this.list = list;
@@ -23,13 +22,11 @@ public class Algorithms {
         }
         return copy;
     }
-    
     public void insertAtEnd(int val) {
         int[] arr = copy(list.length+1);
         arr[arr.length-1] = val;
         this.list = arr;
     }
-    
     public void insertAtIndex(int val, int index) {
         int[] arr = new int[list.length+1];
         for (int i=0; i<index; i++) {
@@ -41,18 +38,15 @@ public class Algorithms {
         }
         list = arr;
     }
-    
     public void remove(int index) {
         list[index] = list[list.length-1];
         list = copy(list.length-1);
     }
-    
     public void swap(int index1, int index2) {
         int temp = list[index1];
         list[index1] = list[index2];
         list[index2] = temp;
     }
-    
     @Override
     public String toString() {
         String sArr = "[ ";
