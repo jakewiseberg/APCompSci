@@ -8,9 +8,14 @@ import java.util.*;
 public class PrimitiveObjects {
     public static void main(String[] args) {
         ArrayList<Integer> list = generate(20);
-        System.out.println("List: " + list);
-        System.out.println("Highest number: " + max(list));
-        System.out.println("Lowest number: " + min(list));
+        ArrayList<String> list2 = new ArrayList();
+        list2.add("Jake");
+        list2.add("Thisisareallylongstring");
+        list2.add("Another");
+        list2.add("One");
+        System.out.println(list2);
+        removeAs(list2);
+        System.out.println(list2);
                 
     }
     
@@ -59,5 +64,34 @@ public class PrimitiveObjects {
         for (int i=0; i<size; i++)
             list.add((int)(Math.random()*20+1));
         return list;
+    }
+    
+    public static ArrayList<Integer> reverse(ArrayList<Integer> list) {
+        ArrayList<Integer> reversed = list;
+        for (int i=0; i<reversed.size()/2; i++) {
+            int temp = reversed.get(i);
+            reversed.set(i, reversed.get(reversed.size()-i-1));
+            reversed.set(reversed.size()-i-1, temp);
+        }
+        return reversed;
+    }
+    
+    public static String removeLongest(ArrayList<String> list) {
+        String longest = list.get(list.size()-1);
+        int longestIndex = 0;
+        for (int i =list.size()-2; i>=0; i--) {
+            if (list.get(i).length() > longest.length()) {
+                longest = list.get(i);
+                longestIndex = i;
+            }
+        }
+        list.remove(longestIndex);
+        return longest;
+    }
+    
+    public static void removeAs(ArrayList<String> list) {
+        for (int i = list.size()-1; i>=0; i--)
+            if (list.get(i).charAt(0) == 'a' || list.get(i).charAt(0) == 'A')
+                list.remove(i);
     }
 }
