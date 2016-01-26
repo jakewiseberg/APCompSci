@@ -79,4 +79,30 @@ public class PracticeProblems {
             avgs[i] = avgOfRow(arr[i]);
         return avgs;
     }
+    
+    public static int search(int[] arr, int num) {
+        int count = 0;
+        for (int i=0; i<arr.length; i++) 
+            if (arr[i] == num)
+                count++;
+        return count;
+    }
+    
+    public static int eights(int[][] arr) {
+        int row = 0;
+        int temp;
+        for (int i=0; i<arr.length; i++)
+            if(search(arr[row], 8) > search(arr[i], 8))
+                row = i;
+        return row;
+    }
+    
+    public static int greaaterThan9(int[][] arr) {
+        int count = 0;
+        for (int r=0; r<arr.length; r++) 
+            for (int c=0; c<arr[r].length; c++)
+                if (arr[r][c] > 9)
+                    count++;
+        return count;
+    }
 }
