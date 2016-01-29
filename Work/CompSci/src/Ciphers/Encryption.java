@@ -1,4 +1,4 @@
-package OtherCoolStuff;
+package Ciphers;
 import java.util.Scanner;
 
 /**
