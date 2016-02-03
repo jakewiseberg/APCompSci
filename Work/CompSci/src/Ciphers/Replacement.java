@@ -31,15 +31,6 @@ public class Replacement {
             encrypted += String.valueOf(letters[i]).replace(letters[i], this.key[String.valueOf(this.abc).indexOf(letters[i])]);
         return encrypted;
     }
-    private String decrypt(String word) {
-        word = word.toLowerCase();
-        char[] letters = word.toCharArray();
-        String ecnrypted = "";
-        for(int i=0; i<word.length(); i++) { 
-            ecnrypted += String.valueOf(letters[i]).replace(letters[i], abc[String.valueOf(key).indexOf(letters[i])]);
-        }
-        return ecnrypted;
-    }
     
     private char[] genKey(String keyWord){
         keyWord = keyWord.toLowerCase();
@@ -93,7 +84,7 @@ public class Replacement {
     }
 }
 
-class TestRoom {
+class TestArea1 {
     public static void main(String[] args) {
         Replacement test = new Replacement("hello", "test");
         System.out.println("Encrypted Word: " + test.getWord());
