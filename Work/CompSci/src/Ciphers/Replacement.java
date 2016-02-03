@@ -5,29 +5,40 @@ package Ciphers;
  * @author jacob.wiseberg
  */
 public class Replacement {
-    private String word;
-    private char[] key;
-    private char[] abc = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    private final String word;
+    private final char[] key;
+    private final char[] abc = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     
     public Replacement(String word, String keyWord) {
-        this.word = encrypt(word);
         this.key = genKey(keyWord);
+        this.word = encrypt(word);
     }
     public String getWord() {
-        return word;
+        return this.word;
     }
-    public char[] getKey() {
+    public String getKey() {
+        String key = "";
+        for (int i=0; i<this.key.length; i++)
+            key += this.key[i];
         return key;
     }
     
-
     private String encrypt(String word) {
         word = word.toLowerCase();
         char[] letters = word.toCharArray();
         String encrypted = "";
-        for(int i=0; i<word.length(); i++) 
-            word += String.valueOf(letters[i]).replace(letters[i], this.key[String.valueOf(this.abc).indexOf(letters[i])]);
+        for(int i=0; i<letters.length; i++) 
+            encrypted += String.valueOf(letters[i]).replace(letters[i], this.key[String.valueOf(this.abc).indexOf(letters[i])]);
         return encrypted;
+    }
+    private String decrypt(String word) {
+        word = word.toLowerCase();
+        char[] letters = word.toCharArray();
+        String ecnrypted = "";
+        for(int i=0; i<word.length(); i++) { 
+            ecnrypted += String.valueOf(letters[i]).replace(letters[i], abc[String.valueOf(key).indexOf(letters[i])]);
+        }
+        return ecnrypted;
     }
     
     private char[] genKey(String keyWord){
@@ -79,5 +90,13 @@ public class Replacement {
         arr[index] = arr[arr.length-1];
         arr = copy(arr, arr.length-1);
         return arr;
+    }
+}
+
+class TestRoom {
+    public static void main(String[] args) {
+        Replacement test = new Replacement("hello", "test");
+        System.out.println("Encrypted Word: " + test.getWord());
+        System.out.println("Key Used: " + test.getKey());
     }
 }
