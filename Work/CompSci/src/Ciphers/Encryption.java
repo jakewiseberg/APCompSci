@@ -41,9 +41,7 @@ public class Encryption {
         a = a.toLowerCase();
         char[] abc = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
         char[] letters = a.toCharArray();
-        char[] encryptedWord = new char[a.length()];
         String word = "";
-        
         for(int i=0; i<a.length(); i++) { 
             word = word+String.valueOf(letters[i]).replace(letters[i], abc[String.valueOf(key).indexOf(letters[i])]);
         }

@@ -30,9 +30,25 @@ public class Caesar {
         word = word.toLowerCase();
         char[] letters = word.toCharArray();
         String encrypted = "";
-        for(int i=0; i<letters.length; i++) 
-            encrypted += String.valueOf(letters[i]).replace(letters[i], this.key[String.valueOf(this.abc).indexOf(letters[i])]);
+        for(int i=0; i<letters.length; i++) {
+            if (letters[i] == ' ')
+                encrypted += " ";
+            else
+                encrypted += String.valueOf(letters[i]).replace(letters[i], this.key[String.valueOf(this.abc).indexOf(letters[i])]);
+        }
         return encrypted;
+    }
+    public String decrypt() {
+        word = word.toLowerCase();
+        char[] letters = word.toCharArray();
+        String decrypted = "";
+        for(int i=0; i<word.length(); i++) {
+            if (letters[i] == ' ')
+                decrypted += " ";
+            else
+                decrypted += String.valueOf(letters[i]).replace(letters[i], abc[String.valueOf(key).indexOf(letters[i])]);
+        }
+        return decrypted;
     }
     
     private char[] genKey() {
@@ -50,8 +66,9 @@ public class Caesar {
 
 class TestArea2 {
     public static void main(String[] args) {
-        Caesar test = new Caesar("hello", 5);
+        Caesar test = new Caesar("HELLO world", 5);
         System.out.println("Encrypted Word: " + test.getWord());
         System.out.println("Key Used: " + test.getKey());
+        System.out.println("Decrypted Word: " + test.decrypt());
     }
 }
