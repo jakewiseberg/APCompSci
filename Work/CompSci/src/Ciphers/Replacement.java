@@ -28,8 +28,8 @@ public class Replacement {
         char[] letters = word.toCharArray();
         String encrypted = "";
         for(int i=0; i<letters.length; i++) {
-            if (letters[i] == ' ')
-                encrypted += " ";
+            if (!String.valueOf(abc).contains(String.valueOf(letters[i])))
+                encrypted += String.valueOf(letters[i]);
             else
                 encrypted += String.valueOf(letters[i]).replace(letters[i], this.key[String.valueOf(this.abc).indexOf(letters[i])]);
         }
@@ -40,8 +40,8 @@ public class Replacement {
         char[] letters = word.toCharArray();
         String decrypted = "";
         for(int i=0; i<word.length(); i++) {
-            if (letters[i] == ' ')
-                decrypted += " ";
+            if (!String.valueOf(abc).contains(String.valueOf(letters[i])))
+                decrypted += String.valueOf(letters[i]);
             else
                 decrypted += String.valueOf(letters[i]).replace(letters[i], abc[String.valueOf(key).indexOf(letters[i])]);
         }
@@ -102,7 +102,7 @@ public class Replacement {
 
 class TestArea1 {
     public static void main(String[] args) {
-        Replacement test = new Replacement("hello world", "keyword");
+        Replacement test = new Replacement("Hello, World!", "keyword");
         System.out.println(test.getWord());
         System.out.println(test.decrypt());
         System.out.println(test.getKey());

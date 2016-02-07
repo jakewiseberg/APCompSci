@@ -8,8 +8,8 @@ public class Transposition {
     private String word;
     private int key;
     
-    public Transposition(String word, int key) {
-        this.key = key;
+    public Transposition(String word) {
+        this.key = word.length()/2+1;
         this.word = encrypt(word);
     }
     public String getWord() {
@@ -24,7 +24,7 @@ public class Transposition {
         String encrypted = "";
         int index = 0;
         String[][] letters = new String[key][key];
-        for (int r=0; r<key; r++) {
+        for (int r=0; r<2; r++) {
             for (int c=0; c<key; c++) {
                 if (index < word.length())
                     letters[r][c] = String.valueOf(word.charAt(index));
@@ -44,7 +44,7 @@ public class Transposition {
         int index = 0;
         String[][] letters = new String[key][key];
         for (int c=0; c<key; c++) {
-            for (int r=0; r<key; r++) {
+            for (int r=0; r<2; r++) {
                 if (index < word.length())
                     letters[r][c] = String.valueOf(word.charAt(index));
                 index++;
@@ -61,7 +61,7 @@ public class Transposition {
 
 class TestArea3 {
     public static void main(String[] args) {
-        Transposition test = new Transposition("hello", 3);
+        Transposition test = new Transposition("Hello, World!");
         System.out.println("Encrypted Word: " + test.getWord());
         System.out.println("Decryped Word: " + test.getDecryptedWord());
     }
