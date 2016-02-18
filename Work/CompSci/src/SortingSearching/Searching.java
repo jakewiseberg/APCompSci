@@ -21,8 +21,8 @@ public class Searching {
         return -1;
     }
     
-    //precondition: arr is already a sorted array
     public static int binary(int[] arr, int target) {
+        insertion(arr);
         int min = 0, max = arr.length-1, mid;
         while (min+1 < max) {
             mid = (min+max)/2;
