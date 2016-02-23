@@ -60,7 +60,7 @@ public class SortingSearching {
         insertion(b);
         int i=0, j=0, k=0;
         int[] merged = new int[a.length + b.length - 1];
-        while (i<a.length && j<b.length) {
+        while (i<a.length+1 && j<b.length) {
             if (a[i] <= b[j]) {
                 merged[k] = a[i];
                 i++;
