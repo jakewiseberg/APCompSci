@@ -6,10 +6,12 @@ package Money;
  */
 public class Checking implements BankAccount{
     private double balance;
+    private static int nextNum = 0;
     private int aNum;
     public Checking(int init, int aNum) {
         this.balance = init;
         this.aNum = aNum;
+        this.nextNum++;
     }
     
     public double getBalance() {

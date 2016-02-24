@@ -7,11 +7,13 @@ package Money;
 public class Savings implements BankAccount, InterestBearing {
     private double balance;
     private double interest;
+    private static int nextNum = 0;
     private int aNum;
     public Savings(int init, int aNum) {
         this.balance = init;
-        this.aNum = aNum;
         this.interest = .09;
+        this.aNum = aNum;
+        nextNum++;
     }
     
     public double getBalance() {
