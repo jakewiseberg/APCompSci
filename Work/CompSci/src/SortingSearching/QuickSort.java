@@ -5,26 +5,32 @@
  */
 package SortingSearching;
 
+import java.util.Arrays;
+
 /**
  *
  * @author jakew
  */
 public class QuickSort {
     public static void main(String[] args) {
-        
+        int[] arr = {1,4,2,3,7,5,8,6,9,0};
+        sort(arr);
+        System.out.println(toString(arr));
     }
     
     public static int[] sort(int[] arr) {
         int pivot, wall, curr;
         for (int i=0; i<arr.length-2; i++) {
             pivot = arr[arr.length-1];
-            wall = i;
+            wall = i+1;
             for (int j=i; j<arr.length-2; j++) {
                 curr = j;
-                if (curr < pivot)
-                    
+                if (arr[curr] < pivot) {
+                    swap(arr, curr, wall-1);
+                    wall++;
+                }
             }
-            swap(arr, wall+1, arr.length-1);
+            swap(arr, wall, arr.length-1);
         }
         
         
