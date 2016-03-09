@@ -23,5 +23,11 @@ public class Highway {
         //some methods
         highway[0].drive(54);
         System.out.println(highway[2].drive(70));
+        
+        //casting
+        Automobile honda = new Car();
+        Automobile yamaha = (Motorcycle)honda;
+        honda.drive(20);
+        yamaha.drive(20);
     }
 }

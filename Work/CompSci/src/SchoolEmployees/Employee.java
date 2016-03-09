@@ -15,7 +15,7 @@ public abstract class Employee extends Person {
     }
     
     public abstract void work(double hours);
-    public void giveRaise(double increase) { salary += increase; }
+    public void giveRaise(double increase) { salary += (increase*salary); }
 
     public double getSalary() { return salary; }
     public double getHoursWorked() { return hoursWorked; }
