@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SchoolEmployees;
 
 /**
@@ -25,7 +20,10 @@ public class Coach extends Teacher implements Athlete {
                 System.out.println("Whistle noiiiiiiisessssss");
         }
     }
-    public void train(Athlete S) { System.out.println("Go go go go go!!!"); }
+    public void train(Athlete s) {
+        System.out.println("Go go go go go!!!");
+        s.train();
+    }
     @Override
     public void train() { System.out.println("Running laps and lifting weights yea"); }
     @Override
