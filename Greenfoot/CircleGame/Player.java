@@ -8,15 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Circles
 {
+    private int speed = 2;
+    private String log;
+    GreenfootImage image;
+    public Player() {
+        image = getImage();
+    }
+    
     public void act() {
         move();
     }
     
-    @Override
     public void move() {
-        int speed = 2;
-        if (Greenfoot.isKeyDown("space"))
-            speed = 4;
+        speed = 2;
+        if (Greenfoot.isKeyDown("space")) {
+            speed += 2;
+            
+        }
         if (Greenfoot.isKeyDown("w")) {
             setRotation(90);
             move(-speed);
@@ -33,5 +41,13 @@ public class Player extends Circles
             setRotation(0);
             move(speed);
         }
+    }
+    
+    
+    
+    @Override
+    public void eat() {
+        image.scale(image.getWidth()+3, image.getHeight()+3);
+        setImage(image);
     }
 }

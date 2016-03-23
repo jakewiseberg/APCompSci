@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Circles extends Actor
 {
-    abstract void move();
     boolean atEdge() {
         return (this.getY() > this.getWorld().getHeight()) || (this.getX() > this.getWorld().getWidth())
                || (this.getY() < 0) || (this.getX() < 0);
     }
+    abstract void eat();
 }
