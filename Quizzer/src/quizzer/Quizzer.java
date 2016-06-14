@@ -19,19 +19,16 @@ public class Quizzer {
         FileWriter writer = new FileWriter(results, true);   //outputs results to file for future use
         
         //Collects students from results file  NOTWORKING IDK WHAT TO DO AGGAGAGAG
-        Student[] students = new Student[9];
-//        String next;
-//        double nextGrade;
-//        do {
-//            try {
-//                next = teacherReader.nextLine();
-//                nextGrade = teacherReader.nextDouble();
-//                students[3] = (new Student(next, nextGrade));
-//            }
-//            catch (NoSuchElementException) {
-//                break;
-//            }
-//        } while (!next.equalsIgnoreCase(""));
+        ArrayList<Student> students = new ArrayList<Student>();
+        String next;
+        double g;
+        String n;
+        while (teacherReader.hasNext()) {
+            next = teacherReader.nextLine();
+            n = findName(next);
+            g = findGrade(next);
+            students.add(new Student(n, g));
+        }
         
         int questions = reader.nextInt();
         int answersPerQ = reader.nextInt();
@@ -67,41 +64,70 @@ public class Quizzer {
                 System.out.println("\t3. Quit");
                 System.out.print("Input tool number: ");
                 int tool = helper.nextInt();
-                switch(tool) {
-                    case 1:
-                        System.out.println("Class average: " + average(students));
-                        break;
-                    case 2:
-                        sort(students);
-                        break;
-                    case 3:
-                        System.out.println("Bye!");
-                        break;
-                    default: break;
+                while (tool != 3) {
+                    switch(tool) {
+                        case 1:
+                            System.out.println("Class average: " + average(students));
+                            break;
+                        case 2:
+                            sort(students);
+                            printRank(students);
+                            break;
+                        default: break;
+                    }
+                    System.out.print("Anything else (type task number): ");
+                    tool = helper.nextInt();
                 }
+                System.out.println("Bye!");
             }
         }
         writer.close();
     }
     
-    public static double average(Student[] s) {
+    public static double average(ArrayList<Student> s) {
         double sum = 0;
         for (Student e : s) {
             sum += e.getGrade();
         }
-        return sum/(s.length);
+        return sum/(s.size());
     }
     
-    public static void sort(Student[] s) {
-        for (int i=0; i<s.length; i++) {
-            for (int j=1; j < (s.length-i); j++) {
-                if (s[j-1].getGrade() < s[j].getGrade()) {
-                    Student temp = s[j-1];
-                    s[j-1] = s[j];
-                    s[j] = temp;
+    public static void sort(ArrayList<Student> s) {
+        for (int i=0; i<s.size(); i++) {
+            for (int j=1; j < (s.size()-i); j++) {
+                if (s.get(j-1).getGrade() < s.get(j).getGrade()) {
+                    Student temp = s.get(j-1);
+                    s.set(j-1, s.get(j));
+                    s.set(j, temp);
                 }
             }
         }
+    }
+    
+    public static String findName(String str) {
+        String name = "";
+        int i=0;
+        while (!str.substring(i, i+1).equals("|")) {
+            name += str.substring(i, i+1);
+            i++;
+        }
+        return name;
+    }
+    
+    public static double findGrade(String str) {
+        String grade = "";
+        int i=0;
+        while (!str.substring(i, i+1).equals("|")) { i++; }
+        grade += str.substring(i+1);
+        double gradeDouble = Double.parseDouble(grade);
+        return gradeDouble;
+    }
+    
+    public static void printRank(ArrayList<Student> arr) {
+        for (Student s : arr) {
+            System.out.print(s.getName() + " ");
+        }
+        System.out.println("");
     }
     
 }
