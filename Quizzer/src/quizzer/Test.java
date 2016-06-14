@@ -37,6 +37,6 @@ public class Test {
         }
         double percent = ((((double)score)/((double)questions.size()))*100);
         System.out.println("Your grade is a " + percent + "%");
-        return name + ": " + percent + "%";
+        return name + " " + percent + "";
     }
 }
